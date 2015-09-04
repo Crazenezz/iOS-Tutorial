@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SampleProtocolDelegate.h"
 
 @interface SampleProtocol : NSObject
+{
+    // Delegate to respond back
+    id <SampleProtocolDelegate> _delegate;
+}
+
+@property (nonatomic, strong) id delegate;
+
+- (void)startSampleProcess; // Instance method
 
 @end

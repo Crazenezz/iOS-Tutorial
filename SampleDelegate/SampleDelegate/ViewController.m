@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SampleProtocol.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    SampleProtocol *sampleProtocol = [[SampleProtocol alloc] init];
+    sampleProtocol.delegate = self;
+    [myLabel setText:@"Processing..."];
+    [sampleProtocol startSampleProcess];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Sample protocol delegate
+-(void)processCompleted {
+    [myLabel setText:@"Process Completed"];
 }
 
 @end

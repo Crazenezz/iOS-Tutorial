@@ -28,11 +28,12 @@
         
         BOOL isDir;
         NSFileManager *fileManager= [NSFileManager defaultManager];
-        if(![fileManager fileExistsAtPath:fileDirectoryPath isDirectory:&isDir])
+        if(![fileManager fileExistsAtPath:fileDirectoryPath isDirectory:&isDir]) {
             if(![fileManager createDirectoryAtPath:fileDirectoryPath withIntermediateDirectories:YES attributes:nil error:NULL])
                 NSLog(@"Error: Create folder failed %@", fileDirectoryPath);
             else
                 NSLog(@"Create directory: %@", fileDirectoryPath);
+        }
     }
     
 }

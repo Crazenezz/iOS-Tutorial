@@ -10,6 +10,6 @@
 
 @interface Utils : NSObject
 
--(void)createDirectory:(NSString *)path;
+- (void)createDirectory:(NSString *)path;
 
 @end

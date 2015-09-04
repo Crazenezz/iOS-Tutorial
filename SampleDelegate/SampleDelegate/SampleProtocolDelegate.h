@@ -10,4 +10,7 @@
 
 @protocol SampleProtocolDelegate <NSObject>
 
+@required
+- (void)processCompleted;
+
 @end

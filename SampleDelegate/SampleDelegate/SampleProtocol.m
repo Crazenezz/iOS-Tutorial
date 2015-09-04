@@ -10,4 +10,9 @@
 
 @implementation SampleProtocol
 
+- (void)startSampleProcess {
+    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self.delegate
+        selector:@selector(processCompleted) userInfo:nil repeats:NO];
+}
+
 @end

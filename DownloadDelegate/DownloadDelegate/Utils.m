@@ -10,7 +10,7 @@
 
 @implementation Utils
 
--(void)createDirectory:(NSString *)path {
+- (void)createDirectory:(NSString *)path {
     path = [path stringByReplacingOccurrencesOfString:@"http://128.199.201.24/nutricia/data/" withString:@""];
     NSArray *directories = [path componentsSeparatedByString:@"/"];
     
