@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B591A811B9E99190012FE44 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B591A7E1B9E99190012FE44 /* Request.m */; };
+		2B591A821B9E99190012FE44 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B591A801B9E99190012FE44 /* Utils.m */; };
+		2BE1D6AD1B9EA579007BFB08 /* DelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1D6AC1B9EA579007BFB08 /* DelegateObject.m */; };
 		2BE2AF071B9DA19D00BE28D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2AF061B9DA19D00BE28D5 /* main.m */; };
 		2BE2AF0A1B9DA19D00BE28D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2AF091B9DA19D00BE28D5 /* AppDelegate.m */; };
 		2BE2AF0D1B9DA19D00BE28D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2AF0C1B9DA19D00BE28D5 /* ViewController.m */; };
@@ -27,6 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B591A7D1B9E99190012FE44 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		2B591A7E1B9E99190012FE44 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
+		2B591A7F1B9E99190012FE44 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		2B591A801B9E99190012FE44 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		2BE1D6AB1B9EA579007BFB08 /* DelegateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelegateObject.h; sourceTree = "<group>"; };
+		2BE1D6AC1B9EA579007BFB08 /* DelegateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelegateObject.m; sourceTree = "<group>"; };
 		2BE2AF011B9DA19C00BE28D5 /* URLConnectionDelegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLConnectionDelegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE2AF051B9DA19D00BE28D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BE2AF061B9DA19D00BE28D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +90,10 @@
 		2BE2AF031B9DA19C00BE28D5 /* URLConnectionDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				2B591A7D1B9E99190012FE44 /* Request.h */,
+				2B591A7E1B9E99190012FE44 /* Request.m */,
+				2B591A7F1B9E99190012FE44 /* Utils.h */,
+				2B591A801B9E99190012FE44 /* Utils.m */,
 				2BE2AF081B9DA19D00BE28D5 /* AppDelegate.h */,
 				2BE2AF091B9DA19D00BE28D5 /* AppDelegate.m */,
 				2BE2AF0B1B9DA19D00BE28D5 /* ViewController.h */,
@@ -89,6 +102,8 @@
 				2BE2AF111B9DA19D00BE28D5 /* Images.xcassets */,
 				2BE2AF131B9DA19D00BE28D5 /* LaunchScreen.xib */,
 				2BE2AF041B9DA19C00BE28D5 /* Supporting Files */,
+				2BE1D6AB1B9EA579007BFB08 /* DelegateObject.h */,
+				2BE1D6AC1B9EA579007BFB08 /* DelegateObject.m */,
 			);
 			path = URLConnectionDelegate;
 			sourceTree = "<group>";
@@ -220,7 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BE2AF0D1B9DA19D00BE28D5 /* ViewController.m in Sources */,
+				2B591A811B9E99190012FE44 /* Request.m in Sources */,
 				2BE2AF0A1B9DA19D00BE28D5 /* AppDelegate.m in Sources */,
+				2BE1D6AD1B9EA579007BFB08 /* DelegateObject.m in Sources */,
+				2B591A821B9E99190012FE44 /* Utils.m in Sources */,
 				2BE2AF071B9DA19D00BE28D5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +436,7 @@
 				2BE2AF261B9DA19D00BE28D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BE2AF271B9DA19D00BE28D5 /* Build configuration list for PBXNativeTarget "URLConnectionDelegateTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +445,7 @@
 				2BE2AF291B9DA19D00BE28D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
