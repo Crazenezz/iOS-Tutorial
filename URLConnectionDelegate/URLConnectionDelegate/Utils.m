@@ -11,6 +11,8 @@
 @implementation Utils
 
 -(void)createDirectory:(NSString *)path {
+    @autoreleasepool {
+    
     path = [path stringByReplacingOccurrencesOfString:@"http://128.199.201.24/nutricia/data/" withString:@""];
     NSArray *directories = [path componentsSeparatedByString:@"/"];
     
@@ -20,6 +22,7 @@
     NSString *fileDirectoryPath = documentsDirectory;
     NSUInteger counter = 0;
     for (NSString *directory in directories) {
+        @autoreleasepool {
         counter++;
         if (counter == [directories count])
             break;
@@ -34,8 +37,9 @@
             else;
                 //NSLog(@"Create directory: %@", fileDirectoryPath);
         }
+        }
     }
-    
+    }
 }
 
 @end

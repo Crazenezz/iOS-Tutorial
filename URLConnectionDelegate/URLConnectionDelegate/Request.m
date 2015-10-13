@@ -13,12 +13,13 @@
 
 NSString *apiURL;
 
--(Request *)init {
+- (Request *)init {
     apiURL = @"http://128.199.201.24/nutricia/application/api";
     return self;
 }
 
--(NSDictionary *)requestVersionData {
+- (NSDictionary *)getVersionData {
+    @autoreleasepool {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/version", apiURL]]];
     
     NSData *data = [@"version=1&token=d41d8cd98f00b204e9800998ecf8427e" dataUsingEncoding:NSUTF8StringEncoding];
@@ -36,9 +37,12 @@ NSString *apiURL;
     }
     
     return jsonData;
+    }
 }
 
--(void)downloadFile:(NSString *)filePath {
+- (void)downloadFile:(NSString *)filePath {
+    @autoreleasepool {
+    
     NSURL *url = [NSURL URLWithString:filePath];
     
     NSData *urlData = [NSData dataWithContentsOfURL:url];
@@ -53,6 +57,7 @@ NSString *apiURL;
         NSString *downloadedFilePath = [NSString stringWithFormat:@"%@/data/%@", documentsDirectory, filePath];
         [urlData writeToFile:downloadedFilePath atomically:YES];
         //NSLog(@"Download file: %@", downloadedFilePath);
+    }
     }
 }
 

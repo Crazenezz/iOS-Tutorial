@@ -10,9 +10,9 @@
 
 @interface Request : NSObject
 
-@property (readonly) NSString *apiURL;
+@property (assign, readonly) NSString *apiURL;
 
--(NSDictionary *)requestVersionData;
+-(NSDictionary *)getVersionData;
 -(void)downloadFile:(NSString *)filePath;
 
 @end

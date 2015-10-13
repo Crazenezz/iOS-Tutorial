@@ -10,9 +10,11 @@
 
 @interface DelegateObject : NSObject
 
-@property NSString *fileName;
-@property NSMutableData *receivedData;
-@property NSString *url;
-@property int totalFiles;
+@property (assign) NSString *fileName;
+@property (assign) NSMutableData *receivedData;
+@property (assign) NSString *url;
+@property (assign) int totalFiles;
+
+- (DelegateObject *)initWithParams:(NSString *)fileName :(NSString *)url :(int)totalFiles;
 
 @end

@@ -25,29 +25,32 @@
 }
 
 - (IBAction)download:(UIButton *)sender {
-    Request *newRequest = [[Request alloc] init];
-    NSDictionary *versionDict = [newRequest requestVersionData];
-    
-    if(versionDict) {
-        NSString *baseURL = [versionDict objectForKey:@"baseurl"];
+    @autoreleasepool {
         
-        for(NSDictionary *versionData in [versionDict objectForKey:@"data"]) {
-            
-            @autoreleasepool {
-                NSString *fileName = [versionData objectForKey:@"file"];
-                NSString *url = [NSString stringWithFormat:@"%@%@", baseURL, fileName];
-                NSURLRequest *request = [NSURLRequest requestWithURL:
-                    [NSURL URLWithString:url] cachePolicy:nil timeoutInterval:1000];
+        Request *newRequest = [[Request alloc] init];
+        NSDictionary *versionDict = [newRequest getVersionData];
+    
+        if(versionDict) {
+            NSString *baseURL = [versionDict objectForKey:@"baseurl"];
+        
+            for(NSDictionary *versionData in [versionDict objectForKey:@"data"]) {
+                @autoreleasepool {
+                    NSString *fileName = [versionData objectForKey:@"file"];
+                    NSString *url = [NSString stringWithFormat:@"%@%@", baseURL, fileName];
+                    NSURLRequest *request = [NSURLRequest requestWithURL:
+                        [NSURL URLWithString:url] cachePolicy:nil timeoutInterval:1000];
                 
-                DelegateObject *objectDelegate = [[DelegateObject alloc] init];
-                objectDelegate.fileName = fileName;
-                objectDelegate.url = url;
-                objectDelegate.totalFiles = [[versionDict objectForKey:@"total_files"] integerValue];
-                
-                NSURLConnection *connection = [[NSURLConnection alloc]
-                    initWithRequest:request delegate:objectDelegate];
+                    DelegateObject *objectDelegate = [[DelegateObject alloc]
+                        initWithParams:fileName
+                            :url
+                            :[[versionDict objectForKey:@"total_files"] integerValue]];
+     
+                    NSURLConnection *connection = [[NSURLConnection alloc]
+                        initWithRequest:request delegate:objectDelegate];
+                }
             }
         }
+    
     }
     
     NSLog(@"Button pressed");

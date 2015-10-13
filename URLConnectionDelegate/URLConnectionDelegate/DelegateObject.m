@@ -16,8 +16,20 @@ NSString *documentsDirectory;
 int counterReceived = 0;
 int counterError = 0;
 
+- (DelegateObject *)initWithParams:(NSString *)fileName :(NSString *)url :(int)totalFiles {
+    self = [super init];
+    
+    if (self) {
+        self.fileName = fileName;
+        self.url = url;
+        self.totalFiles = totalFiles;
+    }
+    
+    return self;
+}
+
 - (void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse *)response {
-    self.receivedData = [[NSMutableData alloc] init];
+    @autoreleasepool {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(
         NSDocumentDirectory, NSUserDomainMask, YES);
@@ -30,19 +42,28 @@ int counterError = 0;
     [[[Utils alloc]init] createDirectory:filePath];
     
     //NSLog(@"Did Receive Response %@", response);
+    }
 }
 
 - (void)connection:(NSURLConnection*)connection didReceiveData:(NSData*)data {
+    @autoreleasepool {
+        
     [self.receivedData appendData:data];
     //NSLog(@"Append data to object Mutable Data from %@", self.fileName);
+    }
 }
 
 - (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error {
+    @autoreleasepool {
+    
     NSLog(@"Failed to download: %@, with erorr: %@", self.fileName, error);
     counterError++;
+    }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    @autoreleasepool {
+    
     NSString *downloadedFilePath = [NSString stringWithFormat:
         @"%@/data/%@", documentsDirectory, filePath];
     
@@ -52,6 +73,7 @@ int counterError = 0;
     if(self.totalFiles == (counterReceived + counterError))
         NSLog(@"Download Finished, total %d file(s), succeed %d file(s), error %d file(s)", self.totalFiles, counterReceived, counterError);
     //NSLog(@"Download file %@ to %@", self.fileName, downloadedFilePath);
+    }
 }
 
 @end

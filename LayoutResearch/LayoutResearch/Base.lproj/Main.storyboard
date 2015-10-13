@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-ov-BEr">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <segue destination="0e4-nW-Keu" kind="presentation" id="09a-dz-xiI"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MsV-ov-BEr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="178-8M-q3h"/>
+                            <constraint firstItem="MsV-ov-BEr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VGK-Sr-xgc"/>
+                            <constraint firstItem="MsV-ov-BEr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ns4-S8-L39"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MsV-ov-BEr"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="178-8M-q3h"/>
+                                <exclude reference="VGK-Sr-xgc"/>
+                                <exclude reference="ns4-S8-L39"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="MsV-ov-BEr"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="178-8M-q3h"/>
+                                <include reference="VGK-Sr-xgc"/>
+                                <include reference="ns4-S8-L39"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="MsV-ov-BEr" id="oPT-Jk-aye"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220.5" y="429"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vs1-we-Y2x">
+            <objects>
+                <viewController id="0e4-nW-Keu" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qey-Ur-LfT"/>
+                        <viewControllerLayoutGuide type="bottom" id="iQp-Jj-F5z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Umz-gO-W5s">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mUk-Wu-WI8">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzd-yB-Saa">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="332" y="20" width="48" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="9Dd-ze-zBe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mUk-Wu-WI8" firstAttribute="top" secondItem="qey-Ur-LfT" secondAttribute="bottom" id="8NI-6q-KZn"/>
+                            <constraint firstItem="mUk-Wu-WI8" firstAttribute="leading" secondItem="Umz-gO-W5s" secondAttribute="leadingMargin" id="rQP-VZ-xC4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mUk-Wu-WI8"/>
+                                <exclude reference="bzd-yB-Saa"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8NI-6q-KZn"/>
+                                <exclude reference="rQP-VZ-xC4"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mUk-Wu-WI8"/>
+                                <include reference="bzd-yB-Saa"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8NI-6q-KZn"/>
+                                <include reference="rQP-VZ-xC4"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="bzd-yB-Saa" id="3ja-S5-w9m"/>
+                        <outlet property="modalSearchTextField" destination="mUk-Wu-WI8" id="W6r-qP-Mbd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goA-la-JYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1083" y="381"/>
+        </scene>
+    </scenes>
+</document>
